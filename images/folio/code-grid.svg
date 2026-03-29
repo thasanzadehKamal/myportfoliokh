@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111f"/>
+      <stop offset="100%" stop-color="#020407"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101d30"/>
+      <stop offset="100%" stop-color="#0a1320"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity=".08" stroke="#c7d2fe">
+    <path d="M0 120 H1200"/>
+    <path d="M0 240 H1200"/>
+    <path d="M0 360 H1200"/>
+    <path d="M0 480 H1200"/>
+    <path d="M0 600 H1200"/>
+    <path d="M0 720 H1200"/>
+    <path d="M120 0 V900"/>
+    <path d="M240 0 V900"/>
+    <path d="M360 0 V900"/>
+    <path d="M480 0 V900"/>
+    <path d="M600 0 V900"/>
+    <path d="M720 0 V900"/>
+    <path d="M840 0 V900"/>
+    <path d="M960 0 V900"/>
+    <path d="M1080 0 V900"/>
+  </g>
+  <rect x="120" y="120" width="960" height="640" rx="30" fill="url(#panel)" filter="url(#shadow)"/>
+  <rect x="120" y="120" width="960" height="82" rx="30" fill="#0f1a2b"/>
+  <circle cx="180" cy="161" r="10" fill="#ff6b6b"/>
+  <circle cx="212" cy="161" r="10" fill="#ffd166"/>
+  <circle cx="244" cy="161" r="10" fill="#06d6a0"/>
+  <text x="305" y="170" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="22">kamal-profile.tsx</text>
+  <g font-family="Consolas, monospace" font-size="28">
+    <text x="180" y="290" fill="#f472b6">const</text>
+    <text x="284" y="290" fill="#f8fafc">developer</text>
+    <text x="452" y="290" fill="#7dd3fc">=</text>
+    <text x="488" y="290" fill="#f8fafc">{</text>
+    <text x="180" y="348" fill="#a78bfa">name:</text>
+    <text x="318" y="348" fill="#fde68a">'Kamal Hasanzade'</text>
+    <text x="180" y="406" fill="#a78bfa">stack:</text>
+    <text x="326" y="406" fill="#fde68a">['HTML','CSS','Tailwind','React']</text>
+    <text x="180" y="464" fill="#a78bfa">focus:</text>
+    <text x="326" y="464" fill="#fde68a">'Responsive UI and clean frontend'</text>
+    <text x="180" y="522" fill="#f8fafc">}</text>
+    <text x="180" y="610" fill="#7dd3fc">&lt;section</text>
+    <text x="332" y="610" fill="#f472b6">className</text>
+    <text x="490" y="610" fill="#f8fafc">=</text>
+    <text x="522" y="610" fill="#fde68a">"junior-frontend-portfolio"</text>
+    <text x="838" y="610" fill="#7dd3fc">&gt;</text>
+    <text x="230" y="668" fill="#e2e8f0">Building polished interfaces with speed and clarity.</text>
+    <text x="180" y="726" fill="#7dd3fc">&lt;/section&gt;</text>
+  </g>
+  <path d="M802 244 C852 244 898 274 922 322" fill="none" stroke="url(#line)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="938" cy="350" r="18" fill="#7dd3fc"/>
+  <text x="120" y="84" fill="#f8fafc" font-family="Georgia, serif" font-size="56" letter-spacing="2">KAMAL FRONTEND CODE</text>
+</svg>

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="az" class="no-js" >
 <head>
 
     <!--- basic page needs
@@ -74,13 +74,9 @@
             background: rgba(255, 255, 255, 0.08);
         }
         .s-intro__content-media img {
-            border-radius: 2.4rem;
+            
             box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
             transition: transform .45s ease, box-shadow .45s ease;
-        }
-        .s-intro__content-media img:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 34px 90px rgba(230, 126, 34, 0.22);
         }
         .entry {
             transition: transform .45s cubic-bezier(.22, 1, .36, 1);
@@ -122,6 +118,12 @@
         .folio-entries .entry:hover .entry__thumb {
             box-shadow: 0 24px 56px rgba(230, 126, 34, 0.12), 0 18px 36px rgba(0, 0, 0, 0.22);
         }
+        .folio-entries {
+            row-gap: 1.6rem;
+        }
+        .folio-entries .entry {
+            padding: .8rem;
+        }
         .btn,
         .s-header__menu-links a,
         .social-list a {
@@ -149,6 +151,149 @@
         .counter-items__item:hover {
             transform: translateY(-6px);
             background-color: rgba(255, 255, 255, 0.03);
+        }
+        .s-header__nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1.6rem;
+            flex: 1;
+        }
+        .s-header__menu-links {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .s-header__menu-links a {
+            white-space: nowrap;
+        }
+        .s-header__block {
+            flex-shrink: 0;
+        }
+        .language-switcher {
+            position: relative;
+            margin-left: 1.2rem;
+            align-self: center;
+            flex-shrink: 0;
+        }
+        .language-switcher__toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .8rem;
+            min-width: 8rem;
+            padding: .65rem 1rem;
+            margin: 0;
+            border: 1px solid rgba(17, 17, 17, 0.08);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            color: #111;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            line-height: 1;
+            backdrop-filter: blur(12px);
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+        .language-switcher__toggle:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12);
+            border-color: rgba(230, 126, 34, 0.28);
+        }
+        .language-switcher__toggle-icon {
+            width: 1rem;
+            height: 1rem;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg) translateY(-1px);
+            transition: transform .25s ease;
+            opacity: .65;
+        }
+        .language-switcher.is-open .language-switcher__toggle-icon {
+            transform: rotate(-135deg) translateY(-1px);
+        }
+        .language-switcher__menu {
+            position: absolute;
+            top: calc(100% + 1rem);
+            right: 0;
+            min-width: 15rem;
+            padding: .6rem;
+            border: 1px solid rgba(17, 17, 17, 0.08);
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 22px 50px rgba(15, 23, 42, 0.14);
+            backdrop-filter: blur(16px);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+            z-index: 20;
+        }
+        .language-switcher.is-open .language-switcher__menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .language-switcher__option {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .9rem 1rem;
+            border: 0;
+            border-radius: 1.4rem;
+            background: transparent;
+            color: #111;
+            text-align: left;
+            transition: background-color .22s ease, transform .22s ease, color .22s ease;
+        }
+        .language-switcher__option:hover {
+            background: rgba(230, 126, 34, 0.1);
+            transform: translateX(2px);
+        }
+        .language-switcher__option.is-active {
+            background: #111;
+            color: #fff;
+        }
+        .language-switcher__code {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+        }
+        .language-switcher__label {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        @media screen and (max-width: 900px) {
+            .s-header__nav {
+                display: block;
+            }
+            .s-header__menu-links {
+                justify-content: flex-start;
+            }
+            .language-switcher {
+                margin: 1.4rem 0 0;
+                width: 100%;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-2rem);
+                transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            .language-switcher__toggle {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .language-switcher__menu {
+                left: 0;
+                right: auto;
+                width: 100%;
+            }
+            .menu-is-open .language-switcher {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
         }
     </style>
 
@@ -181,19 +326,40 @@
 
                 <div class="s-header__block">
                     <div class="s-header__logo">
-                        <a class="logo logo--text" href="#top">My Portfolio</a>
+                        <a class="logo logo--text" href="#top" aria-label="Go to top of portfolio">My Portfolio</a>
                     </div>
 
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                    <a class="s-header__menu-toggle" href="#0" aria-label="Open navigation menu" aria-controls="site-nav" aria-expanded="false"><span>Menu</span></a>
                 </div> <!-- end s-header__block -->
 
-                <nav class="s-header__nav">    
+                <nav id="site-nav" class="s-header__nav">    
                     <ul class="s-header__menu-links">
-                        <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
-                        <li><a class="smoothscroll" href="#about">About</a></li>
-                        <li><a class="smoothscroll" href="#works">Works</a></li>
-                        <li><a class="smoothscroll" href="#footer">Contact</a></li>
+                        <li class="current"><a class="smoothscroll" href="#intro" data-i18n="nav.intro">Giriş</a></li>
+                        <li><a class="smoothscroll" href="#about" data-i18n="nav.about">Haqqımda</a></li>
+                        <li><a class="smoothscroll" href="#works" data-i18n="nav.works">İşlər</a></li>
+                        <li><a class="smoothscroll" href="#interests" data-i18n="nav.interests">Maraqlar</a></li>
+                        <li><a class="smoothscroll" href="#footer" data-i18n="nav.contact">Əlaqə</a></li>
                     </ul> <!-- s-header__menu-links -->    
+                    <div class="language-switcher" aria-label="Language switcher">
+                        <button class="language-switcher__toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+                            <span class="language-switcher__current">AZ</span>
+                            <span class="language-switcher__toggle-icon"></span>
+                        </button>
+                        <div class="language-switcher__menu" role="menu">
+                            <button class="language-switcher__option is-active" type="button" data-lang="az" role="menuitem">
+                                <span class="language-switcher__code">AZ</span>
+                                <span class="language-switcher__label">Azərbaycanca</span>
+                            </button>
+                            <button class="language-switcher__option" type="button" data-lang="en" role="menuitem">
+                                <span class="language-switcher__code">EN</span>
+                                <span class="language-switcher__label">English</span>
+                            </button>
+                            <button class="language-switcher__option" type="button" data-lang="ru" role="menuitem">
+                                <span class="language-switcher__code">RU</span>
+                                <span class="language-switcher__label">Русский</span>
+                            </button>
+                        </div>
+                    </div>
                 </nav> <!-- end s-header__nav -->
 
             </div> <!-- end s-header__inner -->
@@ -209,16 +375,16 @@
                     
                     <div class="s-intro__content-text">
 
-                        <div class="s-intro__content-pretitle text-pretitle">Hello</div>
-                        <h1 class="s-intro__content-title">
-                        I'm Kamal H&#601;s&#601;nzad&#601; <br>
-                        a junior frontend developer <br>
-                        based in Azerbaijan.
+                        <div class="s-intro__content-pretitle text-pretitle" data-i18n="hero.pretitle">Salam</div>
+                        <h1 class="s-intro__content-title" data-i18n="hero.title">
+                        Mən Kamal H&#601;s&#601;nzad&#601;yəm <br>
+                        junior frontend developerəm <br>
+                        və Azərbaycanda yaşayıram.
                         </h1>                            
 
                         <div class="s-intro__content-btns">
-                            <a class="smoothscroll btn" href="#about">More About Me</a>
-                            <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
+                            <a class="smoothscroll btn" href="#about" data-i18n="hero.more">Daha Ətraflı</a>
+                            <a class="smoothscroll btn btn--stroke" href="#footer" data-i18n="hero.contact">Əlaqə Saxla</a>
                         </div> <!-- s-intro__content-btns -->   
 
                     </div> <!-- s-intro__content-text -->                     
@@ -228,13 +394,13 @@
 
             <ul class="s-intro__social social-list">
                 <li>
-                    <a href="https://www.instagram.com/thasanzadeh_/" target="_blank" rel="noreferrer">
+                    <a href="https://www.instagram.com/thasanzadeh_/" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
                         <span class="u-screen-reader-text">Instagram</span>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/kamal-hesenzade-84831338b/" target="_blank" rel="noreferrer">
+                    <a href="https://www.linkedin.com/in/kamal-hesenzade-84831338b/" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M6.94 6.5A1.44 1.44 0 0 1 5.5 7.94A1.44 1.44 0 0 1 4.06 6.5A1.44 1.44 0 0 1 5.5 5.06A1.44 1.44 0 0 1 6.94 6.5M6.98 9.06H4.02V19H6.98V9.06M11.7 9.06H8.76V19H11.68V13.78C11.68 10.88 15.46 10.61 15.46 13.78V19H18.4V12.76C18.4 7.91 12.85 8.09 11.68 10.47V9.06H11.7Z"></path></svg>
                         <span class="u-screen-reader-text">LinkedIn</span>
                     </a>
@@ -242,11 +408,11 @@
             </ul> <!-- end s-intro__social -->
 
             <div class="s-intro__content-media">                               
-                <img src="images/mee.jpg" srcset="images/mee.jpg 1x, images/mee.jpg 2x" alt="Kamal H&#601;s&#601;nzad&#601; portrait">
+                <img src="images/mee.jpg" alt="Kamal H&#601;s&#601;nzad&#601; portrait">
             </div> <!-- s-intro__content-media -->                
 
             <div class="s-intro__btn-download">
-                <a class="btn btn--stroke" href="IT-Manager-CV-Resume.pdf" target="_blank" rel="noreferrer">Get My CV</a>
+                <a class="btn btn--stroke" href="IT-Manager-CV-Resume.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero.cv">CV-mi Aç</a>
             </div> <!-- end s-intro__btn-download -->
             
             <div class="s-intro__scroll-down">
@@ -269,15 +435,15 @@
                 <div class="column xl-12">    
                     
                     <div class="section-header" data-num="01">
-                        <h2 class="text-display-title">About Me.</h2>
+                        <h2 class="text-display-title" data-i18n="about.title">Haqqımda.</h2>
                     </div> <!-- end section-header -->
 
-                    <p class="attention-getter">
-                    Motivated junior frontend developer with knowledge of HTML, CSS, Tailwind, SCSS, JavaScript, and React. I enjoy building responsive and user-friendly interfaces, improving my technical skills every day, and creating polished frontend experiences that feel clean and professional.
+                    <p class="attention-getter" data-i18n="about.text1">
+                    Motivasiya dolu junior frontend developerəm. HTML, CSS, Tailwind, SCSS, JavaScript və React biliklərim var. Responsiv və istifadəçi yönümlü interfeyslər qurmağı, texniki bacarıqlarımı hər gün inkişaf etdirməyi və səliqəli frontend təcrübələri yaratmağı sevirəm.
                     </p>
 
-                    <p class="attention-getter">
-                    Alongside frontend development, I also have a foundation in Helpdesk / IT Support basics, strong problem-solving habits, and a responsible approach to both independent and team-based work. My goal is to keep growing through real projects and stronger product thinking.
+                    <p class="attention-getter" data-i18n="about.text2">
+                    Frontend development ilə yanaşı Helpdesk / IT Support əsaslarına da bələyəm, problem həll etməyə yönümlü düşünürəm və həm fərdi, həm də komanda işində məsuliyyətli yanaşıram. Məqsədim real layihələr vasitəsilə daha da inkişaf etməkdir.
                     </p>
 
                     <div class="grid-list-items s-about__blocks">
@@ -380,7 +546,7 @@
             <div class="row">
                 <div class="column xl-12">
                     <div class="section-header" data-num="02">
-                        <h2 class="text-display-title">Selected Works.</h2>
+                        <h2 class="text-display-title" data-i18n="works.title">Seçilmiş İşlər.</h2>
                     </div> <!-- end section-header -->
                 </div>
             </div>
@@ -388,9 +554,9 @@
             <div class="row folio-entries">
 
                 <div class="column entry">
-                    <a href="https://images.pexels.com/photos/13588813/pexels-photo-13588813.jpeg?cs=srgb&dl=pexels-hein-ko-ko-2124072-13588813.jpg&fm=jpg" class="entry__link glightbox" data-glightbox="title: MeAndYou Cafe Website; description: .entry__desc-01">
+                    <a href="https://images.pexels.com/photos/32057344/pexels-photo-32057344.jpeg?cs=srgb&dl=pexels-ahmet-kayra-105407248-32057344.jpg&fm=jpg" class="entry__link glightbox" data-glightbox="title: MeAndYou Cafe Website; description: .entry__desc-01">
                         <div class="entry__thumb">
-                            <img src="https://images.pexels.com/photos/13588813/pexels-photo-13588813.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Modern cafe interior for MeAndYou project">
+                            <img src="https://images.pexels.com/photos/32057344/pexels-photo-32057344.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1600&q=90" alt="Premium cafe interior for MeAndYou project">
                         </div>
                         <div class="entry__info">
                             <h4 class="entry__title">MeAndYou Cafe Website</h4>
@@ -401,15 +567,15 @@
                     <div class="glightbox-desc entry__desc-01">
                         <p>
                         Responsive cafe website with menu and contact sections, designed as a clean and modern frontend presentation project.
-                        <a href="https://meanddyou.netlify.app/" target="_blank" rel="noreferrer">Project Link</a>.
+                        <a href="https://meanddyou.netlify.app/" target="_blank" rel="noopener noreferrer">Project Link</a>.
                         </p>
                     </div>
                 </div> <!-- entry -->
 
                 <div class="column entry">
-                    <a href="https://images.pexels.com/photos/20213725/pexels-photo-20213725.jpeg?cs=srgb&dl=pexels-minhphuc-20213725.jpg&fm=jpg" class="entry__link glightbox" data-glightbox="title: Apple Website 2023; description: .entry__desc-02">
+                    <a href="https://images.pexels.com/photos/4763074/pexels-photo-4763074.jpeg?cs=srgb&dl=pexels-drew-williams-1285451-4763074.jpg&fm=jpg" class="entry__link glightbox" data-glightbox="title: Apple Website 2023; description: .entry__desc-02">
                         <div class="entry__thumb">
-                            <img src="https://images.pexels.com/photos/20213725/pexels-photo-20213725.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Apple devices setup for Apple Website project">
+                            <img src="https://images.pexels.com/photos/4763074/pexels-photo-4763074.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1600&q=90" alt="Apple devices setup for Apple Website project">
                         </div>
                         <div class="entry__info">
                             <h4 class="entry__title">Apple Website 2023</h4>
@@ -420,95 +586,124 @@
                     <div class="glightbox-desc entry__desc-02">
                         <p>
                         Frontend clone of the official Apple website built to practice interactive layout, structure, and modern presentation.
-                        <a href="https://github.com/thasanzadehKamal/Project" target="_blank" rel="noreferrer">Project Link</a>.
+                        <a href="https://github.com/thasanzadehKamal/Project" target="_blank" rel="noopener noreferrer">Project Link</a>.
                         </p>
                     </div>
                 </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="https://images.pexels.com/photos/29327957/pexels-photo-29327957.jpeg?cs=srgb&dl=pexels-jonathanborba-29327957.jpg&fm=jpg" class="entry__link glightbox" data-glightbox="title: Red Bull Formula 1; description: .entry__desc-03">
-                        <div class="entry__thumb">
-                            <img src="https://images.pexels.com/photos/29327957/pexels-photo-29327957.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Red Bull Formula 1 visual">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Red Bull Formula 1</h4>
-                            <div class="entry__cat">Speed &bull; Focus &bull; Race Energy</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-03">
-                        <p>
-                        Formula 1, especially Red Bull Racing visuals, inspires the speed, focus, and energy I try to bring into my frontend work.
-                        <a href="https://www.pexels.com/photo/formula-1-pit-crew-working-on-red-bull-racing-car-29327957/" target="_blank" rel="noreferrer">Photo Source</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="https://images.pexels.com/photos/30054778/pexels-photo-30054778.jpeg?cs=srgb&dl=pexels-exactissime-30054778.jpg&fm=jpg" class="entry__link glightbox" data-glightbox="title: Ferrari Formula 1; description: .entry__desc-04">
-                        <div class="entry__thumb">
-                            <img src="https://images.pexels.com/photos/30054778/pexels-photo-30054778.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ferrari Formula 1 visual">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Ferrari Formula 1</h4>
-                            <div class="entry__cat">Precision &bull; Style &bull; Motion</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-04">
-                        <p>
-                        Ferrari's visual identity, precision, and race-day presence match the premium and disciplined look I enjoy in design.
-                        <a href="https://www.pexels.com/photo/ferrari-formula-1-car-racing-on-track-30054778/" target="_blank" rel="noreferrer">Photo Source</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/code-grid.svg" class="entry__link glightbox" data-glightbox="title: Coding Practice; description: .entry__desc-05">
-                        <div class="entry__thumb">
-                            <img src="images/folio/code-grid.svg" alt="Code visual with Kamal's frontend details">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Coding Practice</h4>
-                            <div class="entry__cat">Frontend &bull; React &bull; Clean UI</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-05">
-                        <p>
-                        A custom code visual built around my own frontend profile, stack, and development direction.
-                        <a href="https://github.com/thasanzadehKamal" target="_blank" rel="noreferrer">GitHub</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/growth-dashboard.svg" class="entry__link glightbox" data-glightbox="title: Growth Journey; description: .entry__desc-06">
-                        <div class="entry__thumb">
-                            <img src="images/folio/growth-dashboard.svg" alt="Code visual showing Kamal's growth journey">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Growth Journey</h4>
-                            <div class="entry__cat">Projects &bull; Learning &bull; Progress</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-06">
-                        <p>
-                        A second custom code visual focused on my current learning path, projects, and frontend growth mindset.
-                        <a href="https://meanddyou.netlify.app/" target="_blank" rel="noreferrer">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry --> 
 
             </div> <!-- folio entries -->
 
         </section> <!-- end s-works --> 
 
 
+        <!-- # interests
+        ================================================== -->
+        <section id="interests" class="s-works target-section">
+
+            <div class="row">
+                <div class="column xl-12">
+                    <div class="section-header" data-num="03">
+                        <h2 class="text-display-title" data-i18n="interests.title">Maraqlar.</h2>
+                    </div> <!-- end section-header -->
+
+                    <p class="attention-getter" data-i18n="interests.text">
+                    Layihələrdən kənarda maraq dairəm də öyrənməyə və inkişaf etməyə bağlıdır. Mən motorsportu və xüsusilə Formula 1-i izləməyi, texnologiya və proqramlaşdırma ilə məşğul olmağı, həmçinin özümü davamlı inkişaf etdirməyi sevirəm.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row folio-entries">
+
+                <div class="column entry">
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/SF-24%20at%20the%20Japanese%20GP.jpg" class="entry__link glightbox" data-glightbox="title: Interest - Ferrari Formula 1; description: .entry__desc-03">
+                        <div class="entry__thumb">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/SF-24%20at%20the%20Japanese%20GP.jpg" alt="Modern Ferrari SF-24 Formula 1 car">
+                        </div>
+                        <div class="entry__info">
+                            <h4 class="entry__title">Ferrari Formula 1</h4>
+                            <div class="entry__cat">Ferrari &bull; Formula 1 &bull; Motorsport</div>
+                        </div>
+                    </a>
+
+                    <div class="glightbox-desc entry__desc-03">
+                        <p>
+                        Modern Ferrari Formula 1 cars combine aggressive design, speed, and the latest era of Scuderia Ferrari performance.
+                        <a href="https://commons.wikimedia.org/wiki/File:SF-24_at_the_Japanese_GP.jpg" target="_blank" rel="noopener noreferrer">Photo Source</a>.
+                        </p>
+                    </div>
+                </div> <!-- entry -->
+
+                <div class="column entry">
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/McLaren%20MP4-6.jpg" class="entry__link glightbox" data-glightbox="title: Interest - McLaren MP4/6 1991; description: .entry__desc-04">
+                        <div class="entry__thumb">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/McLaren%20MP4-6.jpg" alt="McLaren MP4/6 1991 Formula 1 car">
+                        </div>
+                        <div class="entry__info">
+                            <h4 class="entry__title">McLaren 1991</h4>
+                            <div class="entry__cat">MP4/6 &bull; Ayrton Senna Era &bull; Formula 1</div>
+                        </div>
+                    </a>
+
+                    <div class="glightbox-desc entry__desc-04">
+                        <p>
+                        The McLaren MP4/6 from the 1991 Formula 1 era is one of the most iconic cars in motorsport history.
+                        <a href="https://commons.wikimedia.org/wiki/File:McLaren_MP4-6.jpg" target="_blank" rel="noopener noreferrer">Photo Source</a>.
+                        </p>
+                    </div>
+                </div> <!-- entry -->
+
+                <div class="column entry">
+                    <a href="images/folio/code-grid.svg" class="entry__link glightbox" data-glightbox="title: Interest - Technology and Programming; description: .entry__desc-05">
+                        <div class="entry__thumb">
+                            <img src="images/folio/code-grid.svg" alt="Technology and programming visual">
+                        </div>
+                        <div class="entry__info">
+                            <h4 class="entry__title" data-i18n="interests.tech.title">Texnologiya və Proqramlaşdırma</h4>
+                            <div class="entry__cat" data-i18n="interests.tech.cat">Texnologiya &bull; Kodlama &bull; Frontend</div>
+                        </div>
+                    </a>
+
+                    <div class="glightbox-desc entry__desc-05">
+                        <p>
+                        Texnologiya və proqramlaşdırma gündəlik maraq dairəmin əsas hissəsidir. Yeni şeylər öyrənməyi, interfeyslər qurmağı və kod bacarıqlarımı addım-addım inkişaf etdirməyi sevirəm.
+                        </p>
+                    </div>
+                </div> <!-- entry -->
+
+                <div class="column entry">
+                    <a href="images/folio/growth-dashboard.svg" class="entry__link glightbox" data-glightbox="title: Interest - Self Development; description: .entry__desc-06">
+                        <div class="entry__thumb">
+                            <img src="images/folio/growth-dashboard.svg" alt="Self-development visual">
+                        </div>
+                        <div class="entry__info">
+                            <h4 class="entry__title" data-i18n="interests.growth.title">Özünü İnkişaf</h4>
+                            <div class="entry__cat" data-i18n="interests.growth.cat">İnkişaf &bull; Öyrənmə &bull; Hər Gün Daha Yaxşı</div>
+                        </div>
+                    </a>
+
+                    <div class="glightbox-desc entry__desc-06">
+                        <p>
+                        Özünü inkişaf etdirmək mənim əsas maraqlarımdandır. Davamlı öyrənərək, məşq edərək və daha güclü texniki vərdişlər quraraq irəliləməyi sevirəm.
+                        </p>
+                    </div>
+                </div> <!-- entry -->
+
+            </div> <!-- folio entries -->
+
+        </section> <!-- end s-interests --> 
+
+
         <!-- # numbers
         ================================================== -->
         <section id="numbers" class="s-numbers">
+
+            <div class="row">
+                <div class="column xl-12">
+                    <div class="section-header" data-num="04">
+                        <h2 class="text-display-title" data-i18n="numbers.title">Highlights.</h2>
+                    </div> <!-- end section-header -->
+                </div>
+            </div>
 
             <div class="row counter-items">
 
@@ -517,8 +712,8 @@
                         2
                         <span>+</span>
                     </div>
-                    <h5>Featured Projects</h5>
-                    <p>
+                    <h5 data-i18n="numbers.projects.title">Featured Projects</h5>
+                    <p data-i18n="numbers.projects.text">
                     Real frontend projects that helped me improve my practical skills and presentation quality.
                     </p>
                 </div> <!-- end counter-items__item -->
@@ -528,8 +723,8 @@
                         3
                         <span>+</span>
                     </div>
-                    <h5>Years of Education</h5>
-                    <p>
+                    <h5 data-i18n="numbers.education.title">Years of Education</h5>
+                    <p data-i18n="numbers.education.text">
                     Professional education in web design software plus ongoing full stack development study.
                     </p>
                 </div> <!-- end counter-items__item -->
@@ -539,8 +734,8 @@
                         B2
                         <span>+</span>
                     </div>
-                    <h5>English Level</h5>
-                    <p>
+                    <h5 data-i18n="numbers.english.title">English Level</h5>
+                    <p data-i18n="numbers.english.text">
                     Useful for following documentation, learning from resources, and improving through global content.
                     </p>
                 </div> <!-- end counter-items__item -->
@@ -550,8 +745,8 @@
                         100
                         <span>+</span>
                     </div>
-                    <h5>Motivation</h5>
-                    <p>
+                    <h5 data-i18n="numbers.motivation.title">Motivation</h5>
+                    <p data-i18n="numbers.motivation.text">
                     Constant motivation to keep building better interfaces, learn faster, and grow through real work.
                     </p>
                 </div> <!-- end counter-items__item -->
@@ -567,8 +762,8 @@
 
             <div class="row">
                 <div class="column lg-12">
-                    <div class="section-header light-on-dark" data-num="03">
-                        <h2 class="text-display-title">Get In Touch.</h2>
+                    <div class="section-header light-on-dark" data-num="05">
+                        <h2 class="text-display-title" data-i18n="footer.title">Əlaqə.</h2>
                     </div> <!-- end section-header -->
                 </div>
             </div>
@@ -576,22 +771,22 @@
             <div class="row s-footer__content">
 
                 <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
-                    <p class="attention-getter">
-                    Frontend projects, freelance collaboration, or personal portfolio work are all great reasons to reach out. I am open to opportunities where I can keep learning and contribute with clean, responsive frontend work.
+                    <p class="attention-getter" data-i18n="footer.text">
+                    Frontend layihələri, freelance əməkdaşlıq və ya portfolio ilə bağlı işlər üçün mənimlə əlaqə saxlaya bilərsən. Öyrənməyə davam edəcəyim və səliqəli, responsiv işlər təqdim edəcəyim imkanlara açığam.
                     </p>               
                 </div> <!-- end section-footer__about -->
 
                 <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
                     <div class="row">
                         <div class="column xl-4 lg-5 md-6 tab-12">
-                            <h5>Follow Me</h5>
+                            <h5 data-i18n="footer.follow">Məni İzləyin</h5>
                             <ul class="link-list">
-                                <li><a href="https://www.instagram.com/thasanzadeh_/" target="_blank" rel="noreferrer">Instagram</a></li>
-                                <li><a href="https://www.linkedin.com/in/kamal-hesenzade-84831338b/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/thasanzadeh_/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                                <li><a href="https://www.linkedin.com/in/kamal-hesenzade-84831338b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                             </ul>
                         </div>
                         <div class="column xl-6 md-6 tab-12">
-                            <h5>Contact Me</h5>
+                            <h5 data-i18n="footer.contact">Mənimlə Əlaqə</h5>
                             <ul class="link-list">
                                 <li><a href="mailto:kamalhesenzade44@gmail.com">kamalhesenzade44@gmail.com</a></li>
                                 <li><a href="tel:+994555203053">+994 55 520 30 53</a></li>
@@ -606,11 +801,11 @@
             <div class="row s-footer__buttons">
                
                 <div class="column xl-6 tab-12">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kamalhesenzade44@gmail.com" class="btn btn--primary btn--large u-fullwidth" target="_blank" rel="noreferrer">Message Me</a>
+                    <a href="mailto:kamalhesenzade44@gmail.com?subject=Portfolio%20Inquiry" class="btn btn--primary btn--large u-fullwidth" data-i18n="footer.message">Mənə Yaz</a>
                 </div>
           
                 <div class="column xl-6 tab-12">                    
-                    <a href="IT-Manager-CV-Resume.pdf" class="btn btn--stroke btn--large u-fullwidth" target="_blank" rel="noreferrer">Get My CV</a>
+                    <a href="IT-Manager-CV-Resume.pdf" class="btn btn--stroke btn--large u-fullwidth" target="_blank" rel="noopener noreferrer" data-i18n="footer.cv">CV-mi Aç</a>
                 </div>
             
             </div> <!-- end section-footer__buttons -->              
@@ -620,13 +815,13 @@
                 <div class="column xl-6 lg-12">
                     <ul class="s-footer__social social-list">
                         <li>
-                            <a href="https://www.instagram.com/thasanzadeh_/" target="_blank" rel="noreferrer">
+                            <a href="https://www.instagram.com/thasanzadeh_/" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
                                 <span class="u-screen-reader-text">Instagram</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/kamal-hesenzade-84831338b/" target="_blank" rel="noreferrer">
+                            <a href="https://www.linkedin.com/in/kamal-hesenzade-84831338b/" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M6.94 6.5A1.44 1.44 0 0 1 5.5 7.94A1.44 1.44 0 0 1 4.06 6.5A1.44 1.44 0 0 1 5.5 5.06A1.44 1.44 0 0 1 6.94 6.5M6.98 9.06H4.02V19H6.98V9.06M11.7 9.06H8.76V19H11.68V13.78C11.68 10.88 15.46 10.61 15.46 13.78V19H18.4V12.76C18.4 7.91 12.85 8.09 11.68 10.47V9.06H11.7Z"></path></svg>
                                 <span class="u-screen-reader-text">LinkedIn</span>
                             </a>
@@ -636,8 +831,8 @@
 
                 <div class="column xl-6 lg-12">
                     <p class="ss-copyright">
-                        <span>&copy; Copyright My Portfolio 2026</span> 
-                        <span>Based in Azerbaijan,Baku / BY KAMAL</span>
+                        <span data-i18n="footer.copy1">&copy; My Portfolio 2026</span> 
+                        <span data-i18n="footer.copy2">Bakı, Azərbaycan / Kamal tərəfindən</span>
                     </p>
                 </div>
 
@@ -647,7 +842,7 @@
                 <a class="smoothscroll" title="Back to Top" href="#top">                 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
                 </a>                                
-                <span>Back To Top</span>   
+                <span data-i18n="footer.top">Yuxarı Qayıt</span>   
             </div> <!-- end ss-go-top -->
             
         </footer> <!-- end s-footer -->

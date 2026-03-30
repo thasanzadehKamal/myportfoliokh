@@ -197,6 +197,16 @@
     --border-radius: 5px;
 }
 
+::selection {
+    background: rgba(0, 0, 0, 0.35);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(0, 0, 0, 0.35);
+    color: inherit;
+}
+
 /* ------------------------------------------------------------------- 
  * ## spacing and typescale
  * ------------------------------------------------------------------- */

@@ -3174,15 +3174,16 @@ td:last-child {
  * ## mobile menu toggle
  * -------------------------------------------------------------------- */
 .s-header__menu-toggle {
-    --toggle-block-width: 44px;
-    --toggle-line-height: 2px;
-    --toggle-line-width: 24px;
+--toggle-block-width: 50px;
+    --toggle-line-height: 3px;
+    --toggle-line-width: 28px;
+    --toggle-glow: 0 0 12px rgba(255,255,255,0.6);
     display             : none;
     width               : var(--toggle-block-width);
     height              : var(--toggle-block-width);
     position            : absolute;
     top                 : calc((var(--header-height) - var(--toggle-block-width)) / 2);
-    right               : calc(var(--gutter) * 2 - 0.8rem);
+right               : calc(var(--gutter) + 1rem);
 }
 
 .s-header__menu-toggle span {
@@ -3200,6 +3201,8 @@ td:last-child {
     top             : 50%;
     bottom          : auto;
     left            : auto;
+    box-shadow      : var(--toggle-glow);
+    border-radius    : 2px;
 }
 
 .s-header__menu-toggle span::before,
@@ -3214,11 +3217,11 @@ td:last-child {
 }
 
 .s-header__menu-toggle span::before {
-    top: -8px;
+    top: -10px;
 }
 
 .s-header__menu-toggle span::after {
-    top: 8px;
+    top: 10px;
 }
 
 /* is clicked 
@@ -3231,6 +3234,7 @@ td:last-child {
 .s-header__menu-toggle.is-clicked span::before,
 .s-header__menu-toggle.is-clicked span::after {
     background-color: white;
+    box-shadow      : var(--toggle-glow);
 }
 
 .s-header__menu-toggle.is-clicked span::before {

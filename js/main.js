@@ -357,7 +357,7 @@
                 'footer.top': 'Yuxar\u0131 Qay\u0131t'
             },
             en: {
-                pageTitle: 'My Portfolio | Kamal Hasan-zade',
+                pageTitle: 'My Portfolio | Kamal Hasanzade',
                 switcherLabel: 'EN',
                 'nav.intro': 'Intro',
                 'nav.about': 'About',
@@ -365,7 +365,7 @@
                 'nav.interests': 'Interests',
                 'nav.contact': 'Contact',
                 'hero.pretitle': 'Hello',
-                'hero.title': 'I\'m Kamal Hasan-zade <br>a junior frontend developer <br>based in Azerbaijan.',
+                'hero.title': 'I\'m Kamal Hasanzade <br>a junior frontend developer <br>based in Azerbaijan.',
                 'hero.more': 'More About Me',
                 'hero.contact': 'Get In Touch',
                 'hero.cv': 'Get My CV',
@@ -401,7 +401,7 @@
                 'footer.top': 'Back To Top'
             },
             ru: {
-                pageTitle: 'My Portfolio | Kamal Hasan-zade',
+                pageTitle: 'My Portfolio | Kamal Hasanzade',
                 switcherLabel: 'RU',
                 'nav.intro': '\u0413\u043b\u0430\u0432\u043d\u0430\u044f',
                 'nav.about': '\u041e\u0431\u043e \u043c\u043d\u0435',
@@ -457,7 +457,7 @@
         };
 
         const setLanguage = function(lang) {
-            const dict = translations[lang] || translations.az;
+            const dict = translations[lang] || translations.en;
 
             translatableNodes.forEach(function(node) {
                 const key = node.dataset.i18n;
@@ -497,7 +497,7 @@
             if (e.key === 'Escape') closeMenu();
         });
 
-        setLanguage('az');
+        setLanguage('en');
     };
    /* Initialize
     * ------------------------------------------------------ */

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f7f5"/>
+      <stop offset="100%" stop-color="#ccd1d8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#000" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="120" y="116" width="960" height="668" rx="38" fill="#fbfbfa" filter="url(#shadow)"/>
+  <rect x="180" y="168" width="840" height="54" rx="27" fill="#111"/>
+  <circle cx="228" cy="195" r="12" fill="#f8f4ee"/>
+  <rect x="780" y="186" width="70" height="12" rx="6" fill="#f8f4ee" opacity=".55"/>
+  <rect x="878" y="186" width="70" height="12" rx="6" fill="#f8f4ee" opacity=".35"/>
+  <text x="230" y="346" fill="#111" font-family="Georgia, serif" font-size="78">Apple UI Clone</text>
+  <rect x="232" y="404" width="474" height="18" rx="9" fill="#111" opacity=".38"/>
+  <rect x="232" y="452" width="348" height="18" rx="9" fill="#111" opacity=".24"/>
+  <rect x="232" y="536" width="156" height="58" rx="29" fill="#111"/>
+  <rect x="670" y="292" width="230" height="370" rx="48" fill="#111"/>
+  <rect x="696" y="326" width="178" height="302" rx="34" fill="#eceff3"/>
+  <circle cx="785" cy="572" r="38" fill="#e67e22"/>
+  <rect x="918" y="350" width="48" height="244" rx="24" fill="#d2d8df"/>
+</svg>

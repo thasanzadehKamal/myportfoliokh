@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#152014"/>
+      <stop offset="100%" stop-color="#f1e5d5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="112" y="104" width="976" height="694" rx="34" fill="#fbf8f1" filter="url(#shadow)"/>
+  <rect x="112" y="104" width="976" height="92" rx="34" fill="#172016"/>
+  <text x="170" y="163" fill="#f8f4ee" font-family="Georgia, serif" font-size="40">Fistik Resturant</text>
+  <rect x="770" y="142" width="70" height="14" rx="7" fill="#f8f4ee" opacity=".55"/>
+  <rect x="866" y="142" width="70" height="14" rx="7" fill="#f8f4ee" opacity=".35"/>
+  <rect x="170" y="268" width="420" height="330" rx="32" fill="#172016"/>
+  <circle cx="380" cy="432" r="122" fill="#d6a04b"/>
+  <circle cx="380" cy="432" r="86" fill="#fbf8f1"/>
+  <path d="M328 442 C360 390 414 390 446 442 C416 474 360 474 328 442Z" fill="#6f8f43"/>
+  <path d="M340 430 C370 414 404 414 436 430" fill="none" stroke="#172016" stroke-width="10" stroke-linecap="round"/>
+  <rect x="660" y="294" width="280" height="34" rx="17" fill="#172016"/>
+  <rect x="660" y="364" width="360" height="18" rx="9" fill="#172016" opacity=".46"/>
+  <rect x="660" y="410" width="306" height="18" rx="9" fill="#172016" opacity=".34"/>
+  <rect x="660" y="500" width="150" height="58" rx="29" fill="#d6a04b"/>
+  <rect x="170" y="650" width="252" height="78" rx="24" fill="#eadccb"/>
+  <rect x="462" y="650" width="252" height="78" rx="24" fill="#dfc9ae"/>
+  <rect x="754" y="650" width="252" height="78" rx="24" fill="#172016"/>
+  <text x="198" y="700" fill="#172016" font-family="Arial, sans-serif" font-size="24" letter-spacing="5">MENU</text>
+  <text x="490" y="700" fill="#172016" font-family="Arial, sans-serif" font-size="24" letter-spacing="5">BRAND</text>
+  <text x="782" y="700" fill="#f8f4ee" font-family="Arial, sans-serif" font-size="24" letter-spacing="5">BOOKING</text>
+  <text x="170" y="774" fill="#172016" font-family="Arial, sans-serif" font-size="22" letter-spacing="6">RESTAURANT  RESPONSIVE  EXPERIENCE</text>
+</svg>
